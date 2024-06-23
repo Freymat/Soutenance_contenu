@@ -124,13 +124,13 @@ Kraken est le moteur d'HTR/OCR utilisé par eScriptorium, optimisé pour les doc
 
 ![alt text](images/Diapositive9.PNG)
 #### Segmentation
-![Schéma de principe de Kraken](kraken/schema_principe_kraken.png)
+![Schéma de principe de Kraken](images/schema_principe_kraken.png)
 *source: https://kraken.re/main/*
 
-![Segmentation - Schéma de principe](kraken/schema_principe_segmentation.png)
+![Segmentation - Schéma de principe](images/schema_principe_segmentation.png)
 *source: https://kraken.re/main/api.html*
 #### Transcription
-![alt text](kraken/schema_principe_transcription_kraken.png)
+![alt text](images/schema_principe_transcription_kraken.png)
 *source: https://kraken.re/main/api.html*
 
 La reconnaissance est un processus en plusieurs étapes:
@@ -142,8 +142,6 @@ B. Kiessling, Avancées en Reconnaissance Optique des Caractères pour les Docum
 B. Kiessling, D.S.B. Ezra et M.T. Miller, BADAM: A Public Dataset for Baseline Detection in Arabic-script Manuscripts, 9 juillet 2019. URL : http://arxiv.org/abs/1907.04041.. Consulté le 2 juin 2023.
 B. Kiessling, « A Modular Region and Text Line Layout Analysis System », dans 2020 17th International Conference on Frontiers in Handwriting Recognition (ICFHR), présenté à 2020 17th International Conference on Frontiers in Handwriting Recognition (ICFHR), Dortmund, Germany, IEEE, septembre 2020. URL : https://ieeexplore.ieee.org/document/9257770/.. Consulté le 19 juin 2024.
 « API Quickstart — kraken documentation », [s.d.]. URL : https://kraken.re/main/api.html.. Consulté le 19 juin 2024.
-
-
 
 ## Slide 8. Les outils: Passim
 
@@ -160,7 +158,7 @@ Utilisations de Passim :
 
 ### Fonctionnement
 
-Dans un premier temps, les textes sont comparés en les balayant par fenêtre de caractères (tuilage de n-grammes / w-shingling), puis les alignements sont raffinés grâce à l'algorithme de Smith-Waterman. Cet algorithme parcourt chaque document caractère par caractère et détermine si chaque caractère d'un document correspond à un caractère de l'autre. Des espaces sont insérés là où les caractères ne correspondent pas. Ci-dessous un exemple d'alignement obtenu par Passim. Ces resultats se présentent sous forme de fichiers json.
+Dans un premier temps, les textes sont comparés en les balayant par fenêtre de caractères (tuilage de n-grammes / w-shingling), puis les alignements sont raffinés grâce à l'algorithme de Smith-Waterman. Cet algorithme parcourt chaque document caractère par caractère et détermine si chaque caractère d'un document correspond à un caractère de l'autre. Des espaces sont insérés là où les caractères ne correspondent pas. Ci-dessous un exemple d'alignement obtenu par Passim. Ces résultats se présentent sous forme de fichiers json.
 
 ![
 Exemple d'alignement obtenu par Passim
@@ -175,11 +173,11 @@ M. Romanello et S. Hengchen, « Détecter la réutilisation de texte avec Passi
 
 
 # Slide 9. Principe de fonctionnement du pipeleine TABA
-![Principe de fonctionnement](Taba_principe/taba_principe.png)
+![Principe de fonctionnement](images/taba_principe.png)
 
 1. Une page de document est traitée par Kraken (segmentation et transcription), à l'aide d'un modèle générique. eScriptorium permet de faire cette opération via son interface utilisateur.
-2. Le resultat de la transcription est comparé avec un corpus de textes numériques existants, à l'aide de Passim.
-3. Les correspondances entre les lignes de texte du document et les lignes de texte du corpus sont utilisées pour entrainer un modèle de transcription adapté au document.
+2. Le résultat de la transcription est comparé avec un corpus de textes numériques existants, à l'aide de Passim.
+3. Les correspondances entre les lignes de texte du document et les lignes de texte du corpus sont utilisées pour entraîner un modèle de transcription adapté au document.
 
 Ce principe doit être appliqué à un grand nombre de documents, dans lesquels rechercher un grand nombre d'alignement avec des textes numériques existants.
 
@@ -259,7 +257,7 @@ Le code que nous avons développé, ainsi que les fichiers de données généré
 Il est possible de visualiser les résultats dans eScriptorium.
 On peut naviguer entre les images et les transcriptions, et comparer les transcriptions
 
-![alt text](<Example de resultats/diff_transcriptions.png>)
+![alt text](<images/diff_transcriptions.png>)
 
 Chaque ligne est une transcription différente.
 Les couleurs marquent les différences entre les transcriptions:
@@ -273,7 +271,7 @@ Pratique vous la visualisation, mais pour traiter statistiquement les résultats
 ## Diagramme de flux de TABA
 Voici un diagramme de flux du pipeline TABA, pipeline de transcription automatique basé sur l'alignement entre les transcriptions OCR et des textes numériques existants. Son objectif est de produire de grandes quantités de vérité de terrain pour l'entraînement de modèles OCR.
 
-![Taba Flowchart](Taba_principe/taba_flow_chart.png)
+![Taba Flowchart](images/taba_flow_chart.png)
 
 Le Pipeline est développé en python. Il est composé de plusieurs modules:
 - Import des documents depuis eScriptorium. Les documents sont préalablement segmentés et transcrits par Kraken. Il est possible de lancer le pipeline dans connexion avec eScriptorium. Cela permet de travailler sur de très grands lots d'images.
@@ -319,7 +317,7 @@ Un registre des alignements (alignment_register.json) recense les données des a
 Voici comment les données d'alignement de ce manuscrit sont stockées dans le registre des alignements:
 
 
-![alt text](analyse_massive_resultats/doc_4381_part_734771.png)
+![alt text](images/doc_4381_part_734771.png)
 
 ```json
 {
@@ -354,16 +352,16 @@ Nous avons utilisé la bibliothèque Polars pour créer efficacement des datafra
 
 5 tableaux de données sont créés par le pipeline:
 - 2 tableaux donnent respectivement pour chaque document (où se trouve au moins un alignement) 1) le nombre total de lignes alignées pour chaque GT, et 2) la taille du plus gros groupe d'alignements successifs.
-![alt text](< Polars_analyse_resultats/aligned_lines.png>)
+![alt text](< images/Polars_analyse_resultats/aligned_lines.png>)
 
 
 - 2 tableaux établissent des tops des GT les plus alignés (la taille du top est paramétrable), pour chaque document où se trouve au moins un alignement. 1) Top en terme de nombre de lignes alignées, 2) Top en terme de taille du plus gros groupe d'alignements successifs.
 
-![alt text](Polars_analyse_resultats/top.png)
+![alt text](images/Polars_analyse_resultats/top.png)
 
 - un tableau général de synthèse recense pour chaque image et chaque GT le nombre total de lignes alignées, le ratio lignes alignées / nombre de lignes d'OCR, et la taille du plus gros groupe d'alignements successifs.
 
-![alt text](Polars_analyse_resultats/overall.png)
+![alt text](images/Polars_analyse_resultats/overall.png)
 
 # Slide 11. Difficultés rencontrées
 - l'utilisation des outils (installation, configuration, utilisation): 'read the doc, but find it first.'
@@ -397,13 +395,13 @@ Initialement les tsv étaient créées à l'aide de boucles imbriquées. L'utili
 
 
 ## Résultats des optimisations
-![alt text](timings/no-opti.png)
+![alt text](images/timings/no-opti.png)
 *optimisation: uniquement l'utilisation de regex pour le parsing des xmls*
 
-![alt text](timings/no_tsv_opti.png)
+![alt text](images/timings/no_tsv_opti.png)
 *optimisation: regex, concurrent.futures, mais pas encore Polars. Le temps de l'execution est de l'ordre de la seconde, on ne se rend pas compte des problèmes que va poser le passage à l'échelle.*
 
-![alt text](timings/full_opti.png)
+![alt text](images/timings/full_opti.png)
 *Optimisation complète: Polars nous permet de créer les fichiers tsv en 1s, au lieu de 16h40*
 
 
@@ -436,7 +434,7 @@ Pourcentage de fichiers avec alignements trouvés : 31,4 %
 ```
 ![
 Top 20 des GT les plus alignés
-](<Example de resultats/top20-fr.png>)
+](<images/Example de resultats/top20-fr.png>)
 
 
 ## Améliorations futures à apporter au pipeline TABA
