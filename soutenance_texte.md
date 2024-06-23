@@ -1,21 +1,28 @@
-# Soutenance
-Penser à numéroter les slides.
-## Slide 1. Page de garde
-Création auto-supervisée de vérité de terrain pour l'entraînement de modèles de transcription automatique de documents anciens hébraïques.
+# Soutenance de Stage
+**Présentation par** : Matthieu Freyder
+**Encadrant** : Prof. Daniel Stoekl Ben Ezra
+**Date** : Lundi 24 juin 2024
+Stage effectué du 12 février au 16 juin au sein du laboratoire Archéologie &
+Philologie d’Orient et d’Occident (AOROC )
 
-## Slide 2. Introduction
+## Création auto-supervisée de vérité de terrain pour l'entraînement de modèles de transcription automatique de documents anciens hébraïques.
+Création auto-supervisée de vérité de terrain pour l'entraînement de modèles de transcription automatique de documents anciens hébraïques.
+![alt text](images/Diapositive1.PNG)
+
+## Introduction
 
 Selon une étude du Pew Research Center, internet perd la mémoire.
 38 % des pages web qui existaient en 2013 ne sont plus accessibles dix ans plus tard.
-![
-Internet perd la mémoire
-](Introduction/internet_disparition.jpg)
+
+![Internet perd la mémoire](images/Diapositive2.PNG)
 
 Internet ne serait donc pas la mémoire collective que l'on croyait.
 Mais si internet perd la mémoire, cette mémoire ne demeure pas moins vive. C'est une source de données accessible et exploitable.
 
-Le livre, quant à lui, est un support de mémoire plus pérenne. Néanmoins, ce contenu physique est moins facilement accessible et exploitable à grande échelle. Combien de livres dorment dans les bibliothèques sans que leur contenu puisse être exploité faute de numérisation ? Combien de scans de livres restent inutilisés sur les serveurs des bibliothèques faute de transcription ?
 
+![Le livre a d'autres problèmes](images/Diapositive3.PNG)
+Le livre, quant à lui, est un support de mémoire plus pérenne. Néanmoins, ce contenu physique est moins facilement accessible et exploitable à grande échelle. Combien de livres dorment dans les bibliothèques sans que leur contenu puisse être exploité faute de numérisation ? Combien de scans de livres restent inutilisés sur les serveurs des bibliothèques faute de transcription ?
+![alt text](images/Diapositive4.PNG)
 La transcription des documents anciens est un enjeu majeur pour réactiver cette mémoire de l'humanité. Si ces documents anciens, dont certains n'ont pas été ouverts depuis des siècles devenaient accessibles, nous assisterions à de véritables avancées dans la connaissance de notre humanité.
 Imaginez:
 - accès universel, moteurs de recherche, analyse de texte, comparaison de texte, traduction automatique, etc.
@@ -30,8 +37,10 @@ Liens vers les sources:
 https://web.developpez.com/actu/358702/Disparition-d-Internet-un-regard-sur-la-memoire-numerique-en-peril-de-la-Chine-a-la-France-une-degradation-inquietante-des-archives-numeriques/
 https://web.developpez.com/actu/358082/Quand-le-contenu-en-ligne-disparait-38-pourcent-des-pages-web-qui-existaient-en-2013-ne-sont-plus-accessibles-dix-ans-plus-tard-et-54-pourcent-des-pages-Wikipedia-contiennent-au-moins-un-lien-brise/
 
-## Slide 3. Le projet MiDRASH
+## Le projet MiDRASH
 MiDRASH – Migrations of Textual and Scribal Traditions via Large-Scale Computational Analysis of Medieval Manuscripts in Hebrew Script (Migrations des traditions textuelles et scribales via l'analyse computationnelle à grande échelle des manuscrits médiévaux en écriture hébraïque)
+
+![Le projet Midrash](images/Diapositive5.PNG)
 
 **Projet** : Projet de six ans en sciences humaines computationnelles sur les manuscrits hébraïques médiévaux.
 **Financement** : Subvention ERC Synergy de plus de 10 millions d'euros accordée par le Conseil européen de la recherche.
@@ -56,18 +65,19 @@ Avi Shmidman (Université Bar Ilan)
 Daniel Stökl Ben Ezra (EPHE-PSL)
 
 source: https://escripta.hypotheses.org/500
-
-## Slide 4. Notre mission
+## Notre mission
 Comment mon stage s'inscrit-il dans le projet MiDRASH ?
 Le projet MiDRASH a besoin de transcrire des manuscrits hébraïques médiévaux en texte interrogeable. Il s'appuie pour cela sur des outils existants (eScriptorium et Kraken), qui nécessitent l'utilisation de modèles de transcription adaptés aux divers manuscrits et imprimés à traiter.
 
 Pour entraîner un modèle de transcription, il est nécessaire de disposer d'un corpus de données annotées. L'annotation manuelle de ces données est une tâche longue, fastidieuse et coûteuse. En effet, il faut transcrire pour chaque manuscrit, un nombre conséquent de lignes de texte.
 
 Ma mission consiste à développer un outil d'annotation auto-supervisée, afin de créer automatiquement des corpus de données annotées pour l'entraînement des modèles de transcription.
-
-## Slide 5. Principe de l'annotation auto-supervisée
+![alt text](images/Diapositive6.PNG)
+## Principe de l'annotation auto-supervisée
 Comment procéder ?
-Pour réaliser l'annotation auto-supervisée, nous avons la chance d'avoir à notre disposition un grand nombres d'écrits juifs en caractères hébraïques sous forme numérique.
+Pour réaliser l'annotation auto-supervisée, nous avons la chance d'avoir à notre disposition un grand nombres d'écrits en caractères hébraïques sous forme numérique.
+
+![alt text](images/Diapositive7.PNG)
 
 L'idée est d'effectuer une première transcription automatique des manuscrits à l'aide de modèles 'basiques' et 'génériques'.
 
@@ -75,8 +85,10 @@ On peut ensuite rechercher dans ces transcriptions, des correspondances avec des
 
 On peut alors mettre en correspondance les lignes de texte du manuscrit avec les lignes de texte du texte numérique existant qui matchent, et utiliser ces données pour améliorer les modèles de transcription.
 
-## Slide 6. Les outils: eScriptorium
+## Les outils: eScriptorium
 eScriptorium : Une plateforme open source pour l'analyse de documents historiques.
+
+![alt text](images/Diapositive8.PNG)
 
 ### le projet
 
@@ -102,16 +114,15 @@ La plateforme gère :
 4. Exportation de la segmentation et du texte
 5. Interaction manuelle via le zoom, le choix des panneaux d'affichage (image source, segmentation, transcription), la création de régions et de lignes ou la transcription manuelle, l'édition de métadonnées.
 6. Traitement informatique des images:
-- binarisation
 - segmentation: application d'un modèle de segmentation de page pour détecter les lignes de texte et les régions.
 - transcription: application d'un modèle de transcription pour obtenir un texte brut.
 - alignement: recherche de correspondances entre la transcription et des textes numériques existants, à des fins de comparaisons, et d'entraînement de modèles de transcription.
 7. Entraînement de modèles de segmentation et de transcription.
 
-
-## Slide 7. Les outils: Kraken
+## Les outils: Kraken
 Kraken est le moteur d'HTR/OCR utilisé par eScriptorium, optimisé pour les documents historiques et les scripts non latins. Il est développé par Benjamin Kiessling, ingénieur de recherche à l'EPHE.
 
+![alt text](images/Diapositive9.PNG)
 #### Segmentation
 ![Schéma de principe de Kraken](kraken/schema_principe_kraken.png)
 *source: https://kraken.re/main/*
@@ -137,6 +148,9 @@ B. Kiessling, « A Modular Region and Text Line Layout Analysis System », dan
 ## Slide 8. Les outils: Passim
 
 Passim est un outil open source (java, python, apache spark) de détection automatique de réutilisation de texte, implémentant des algorithmes pour détecter et aligner des passages similaires de textes.
+
+![alt text](images/Diapositive10.PNG)
+
 Passim a été développé par David Smith de l'Université Northeastern (US), pour étudier la viralité des textes dans les journaux du XIXe siècle.
 Utilisations de Passim :
 - Détection des rééditions multiples d'un même ouvrage dans une bibliothèque numérique.
@@ -144,19 +158,13 @@ Utilisations de Passim :
 - Étude de la viralité et de la propagation des textes (ex. : textes viraux dans les journaux historiques).
 - Filtrage des documents dupliqués dans une collection avant des étapes de traitement supplémentaires (ex. : modélisation de sujets/topic modelling).
 
-
-
-
 ### Fonctionnement
 
-Dans un premier temps, les textes sont comparés en les balayant par fenêtre de caractères (tuilage de n-grammes / w-shingling), puis les alignements sont raffinés grâce à l'algorithme de Smith-Waterman. Cet algorithme parcourt chaque document caractère par caractère et détermine si chaque caractère d'un document correspond à un caractère de l'autre. Des espaces sont insérés là où les caractères ne correspondent pas. Ci-dessous un exemple d'alignement obtenu par Passim, entre une ligne d'OCR et un témoin numérique. En rouge les caractères qui manquent dans l'OCR, en vert les caractères en trop par rapport au témoin numérique. 
+Dans un premier temps, les textes sont comparés en les balayant par fenêtre de caractères (tuilage de n-grammes / w-shingling), puis les alignements sont raffinés grâce à l'algorithme de Smith-Waterman. Cet algorithme parcourt chaque document caractère par caractère et détermine si chaque caractère d'un document correspond à un caractère de l'autre. Des espaces sont insérés là où les caractères ne correspondent pas. Ci-dessous un exemple d'alignement obtenu par Passim. Ces resultats se présentent sous forme de fichiers json.
 
 ![
 Exemple d'alignement obtenu par Passim
-](passim/ex_passim.png)
-
-![alt text](image-1.png)
-
+](images/Passim_json.png)
 
 *Exemple d'alignement obtenu par Passim*
 
@@ -246,7 +254,23 @@ Cette organisation permet à Sefaria de gérer efficacement à la fois la struct
 Le code que nous avons développé, ainsi que les fichiers de données générés, sont disponibles sur GitHub:
 [github](https://github.com/Freymat/from_Sefaria_to_Passim)
 
-## Slide 11. Diagramme de flux de TABA
+## Exemple de résultats d'alignement
+
+Il est possible de visualiser les résultats dans eScriptorium.
+On peut naviguer entre les images et les transcriptions, et comparer les transcriptions
+
+![alt text](<Example de resultats/diff_transcriptions.png>)
+
+Chaque ligne est une transcription différente.
+Les couleurs marquent les différences entre les transcriptions:
+- la ligne sans coloration est la transcription de référence/éditable
+- les caractères verts ne sont pas présents dans la transcription courante (éditable)
+- les caractères rouges ne sont pas présents dans la transcription comparée. 
+On remarque que le modèle de base (kraken:sinai_no_voc_61) lit כמותו, alors que la transcription correcte est כמוהו (le modèle de base a lu un ת à la place d'un ה).
+
+Pratique vous la visualisation, mais pour traiter statistiquement les résultats, ou si le nombre de documents est très grand, il faut s'appuyer sur d'autres outils.
+
+## Diagramme de flux de TABA
 Voici un diagramme de flux du pipeline TABA, pipeline de transcription automatique basé sur l'alignement entre les transcriptions OCR et des textes numériques existants. Son objectif est de produire de grandes quantités de vérité de terrain pour l'entraînement de modèles OCR.
 
 ![Taba Flowchart](Taba_principe/taba_flow_chart.png)
@@ -259,9 +283,7 @@ Le Pipeline est développé en python. Il est composé de plusieurs modules:
 - Les transcriptions peuvent être exportées vers eScriptorium, si le nombre d'images et de GT textes est raisonnable. De nouveaux modèles de transcription peuvent être entraînés à partir de ces données.
 - Compilation des résultats. Les résultats sont compilés dans des fichiers tsv, facilement exploitables avec polars ou un tableur.
 
-
-
-```shell
+```
 TABA: automatic transcription pipeline based on alignment between OCR transcriptions and existing digital texts, using Passim. Its aim is to produce
 large quantities of ground truth for training OCR models with eScriptorium and Kraken.
 
@@ -288,23 +310,9 @@ optional arguments:
   --backup_results      Backup the pipeline results
 ```
 
-# slide 12. Exemple de résultats
 
-Il est possible de visualiser les résultats dans eScriptorium.
-On peut naviguer entre les images et les transcriptions, et comparer les transcriptions
 
-![alt text](<Example de resultats/diff_transcriptions.png>)
-
-Chaque ligne est une transcription différente.
-Les couleurs marquent les différences entre les transcriptions:
-- la ligne sans coloration est la transcription de référence/éditable
-- les caractères verts ne sont pas présents dans la transcription courante (éditable)
-- les caractères rouges ne sont pas présents dans la transcription comparée. 
-On remarque que le modèle de base (kraken:sinai_no_voc_61) lit כמותו, alors que la transcription correcte est כמוהו (le modèle de base a lu un ת à la place d'un ה).
-
-Pratique vous la visualisation, mais pour traiter statistiquement les résultats, ou si le nombre de documents est très grand, il faut s'appuyer sur d'autres outils.
-
-# Slide 13. Analyse massive des résultats
+## Sortie du Pipeline TABA
 
 Un registre des alignements (alignment_register.json) recense les données des alignements pour chaque image et chaque texte numérique (GT).
 
@@ -330,6 +338,8 @@ Voici comment les données d'alignement de ce manuscrit sont stockées dans le r
         "GT_id": "Machzor_Yom_Kippur_Ashkenaz_clean_concatenated.txt"
     }
 ```
+![alt text](images/Diapositive15.PNG)
+
 On y lit:
 - les informations sur le document (filename, part_pk, part_title)
 - le nom du texte numérique aligné (GT_id)
@@ -339,7 +349,7 @@ On y lit:
 
 Ces indicateurs permettent d'identifier rapidement les documents où de la vérité de terrain de qualité est trouvée.
 
-# Slide 14. Utilisation de Polars pour l'analyse des résultats
+# Utilisation de Polars pour l'analyse des résultats
 Nous avons utilisé la bibliothèque Polars pour créer efficacement des dataframes à partir des données d'alignement.
 
 5 tableaux de données sont créés par le pipeline:
@@ -360,7 +370,10 @@ Nous avons utilisé la bibliothèque Polars pour créer efficacement des datafra
 => La solution: la communication avec les développeurs et la communauté d'utilisateurs.
 - le passage à l'échelle (traitement de très grands lots d'images)
 => La solution: l'optimisation.
-# Slide 12. Passage à l'échelle
+
+![alt text](images/Diapositive17.PNG)
+
+# Le défi du passage à l'échelle
 Notre code a été testé sur différents lots de documents.
 - un lot de 68 images et 5 textes numériques, pour tester le pipeline rapidement et vérifier dans eScriptorium que les résultats sont cohérents.
 - des lots de 1000 images et 5 textes numériques.
@@ -380,7 +393,10 @@ Au lieu de plus de 12h, sur un ordinateur portable.
 - l'utilisation de Polars pour l'analyse des résultats, qui permet de traiter efficacement de grands volumes de données.
 Initialement les tsv étaient créées à l'aide de boucles imbriquées. L'utilisation de Polars et la manipulation de dataframes a permis de réduire drastiquement le temps de traitement.
 
-## Slide 11. Résultats des optimisations
+![alt text](images/Diapositive18.PNG)
+
+
+## Résultats des optimisations
 ![alt text](timings/no-opti.png)
 *optimisation: uniquement l'utilisation de regex pour le parsing des xmls*
 
@@ -389,7 +405,10 @@ Initialement les tsv étaient créées à l'aide de boucles imbriquées. L'utili
 
 ![alt text](timings/full_opti.png)
 *Optimisation complète: Polars nous permet de créer les fichiers tsv en 1s, au lieu de 16h40*
-# Slide 12. Exemple de résultats obtenus avec le pipeline
+
+
+# Exemple de résultats obtenus avec le pipeline
+
 TABA_2024_06_17_bav_1col4 _n7_results
 ```
 Current date: 2024-06-17 17:33:57
@@ -420,14 +439,16 @@ Top 20 des GT les plus alignés
 ](<Example de resultats/top20-fr.png>)
 
 
-## slide 13. Améliorations
+## Améliorations futures à apporter au pipeline TABA
 Les amélioration à apporter:
-- Améliorer la qualité du nettoyage des textes numériques de vérité de terrain (GT)
+- Améliorer la qualité du nettoyage des textes numériques de vérité de terrain (GT), avec une expertise linguistique.
 - Ajouter de nouveaux GT, regrouper certains GT par famille de documents.
 - Améliorer la gestion des erreurs et des exceptions (TABA)
 
+![alt text](images/Diapositive19.PNG)
 
-## Slide 14. TABA au sein du projet MiDRASH
+
+## La suite pour TABA
 Le pipeline TABA va être utilisé pour entraîner des modèles de transcription adaptés aux documents hébraïques médiévaux du projet MiDRASH.  
 30.000 manuscrits  
 300.000 fragments  
@@ -443,5 +464,7 @@ Pour l'instant TABA a été utilisé sur des documents du Vatican, référencés
 - Le catalogue confirme les résultats de TABA: les alignements identifiés sont cohérents avec le contenu attendu dans le document.  
 - TABA a permis d'identifier l'identité de certains documents, dont le contenu n'était pas détaillé dans le catalogue, comme c'est le cas de certains recueils (קובץ).
 
-# Slide 15. Conclusion
-# Slide 16. Remerciements
+![alt text](images/Diapositive21.PNG)
+
+## Remerciements
+![alt text](images/Diapositive22.PNG)
