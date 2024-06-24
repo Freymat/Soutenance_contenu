@@ -143,7 +143,7 @@ B. Kiessling, D.S.B. Ezra et M.T. Miller, BADAM: A Public Dataset for Baseline D
 B. Kiessling, « A Modular Region and Text Line Layout Analysis System », dans 2020 17th International Conference on Frontiers in Handwriting Recognition (ICFHR), présenté à 2020 17th International Conference on Frontiers in Handwriting Recognition (ICFHR), Dortmund, Germany, IEEE, septembre 2020. URL : https://ieeexplore.ieee.org/document/9257770/.. Consulté le 19 juin 2024.
 « API Quickstart — kraken documentation », [s.d.]. URL : https://kraken.re/main/api.html.. Consulté le 19 juin 2024.
 
-## Slide 8. Les outils: Passim
+## Les outils: Passim
 
 Passim est un outil open source (java, python, apache spark) de détection automatique de réutilisation de texte, implémentant des algorithmes pour détecter et aligner des passages similaires de textes.
 
@@ -172,7 +172,7 @@ M. Romanello et S. Hengchen, « Détecter la réutilisation de texte avec Passi
 « Tutorial for Passim, originally written by Matteo Romanello and Simon Hengchen, updated by David Smith to cover the installation and use of Passim version 2 », GitHub, [s.d.]. URL : https://github.com/dasmiq/ph-submissions/blob/passim2-replace/en/published/originals/detecting-text-reuse-with-passim.md.. Consulté le 20 juin 2024.
 
 
-# Slide 9. Principe de fonctionnement du pipeleine TABA
+# Principe de fonctionnement du pipeleine TABA
 ![Principe de fonctionnement](images/taba_principe.png)
 
 1. Une page de document est traitée par Kraken (segmentation et transcription), à l'aide d'un modèle générique. eScriptorium permet de faire cette opération via son interface utilisateur.
@@ -184,7 +184,7 @@ Ce principe doit être appliqué à un grand nombre de documents, dans lesquels 
 L'équipe a nommé ce pipeline TABA (There And Back Again), en référence au mouvement d'aller retour entre eScriptorium et Passim, et en hommage au Hobbit de J.R.R. Tolkien.
 
 
-# Slide 10. Collecter les textes numériques existants (GT)
+# Collecter les textes numériques existants (GT)
 Afin de pouvoir comparer les transcriptions des documents avec des textes numériques existants et rechercher des alignements, il est nécessaire de disposer d'un corpus de textes numériques. Ces textes numériques constituent la vérité de terrain (abrégé GT pour Ground Truth) pour le pipeline TABA.
 Le site Sefaria (https://www.sefaria.org/) est une source de textes numériques en hébreu. Une API permet de récupérer des textes en hébreu et en anglais. Documentation: https://developers.sefaria.org/
 
@@ -363,7 +363,7 @@ Nous avons utilisé la bibliothèque Polars pour créer efficacement des datafra
 
 ![alt text](images/Polars_analyse_resultats/overall.png)
 
-# Slide 11. Difficultés rencontrées
+# Difficultés rencontrées
 - l'utilisation des outils (installation, configuration, utilisation): 'read the doc, but find it first.'
 => La solution: la communication avec les développeurs et la communauté d'utilisateurs.
 - le passage à l'échelle (traitement de très grands lots d'images)
